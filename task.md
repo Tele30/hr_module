@@ -1,0 +1,5 @@
+- makemigrate
+- SuperUser
+- admin.py - unde adaug clasele
+- adaug angajati - contracte, concedii
+- 
