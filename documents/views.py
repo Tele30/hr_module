@@ -104,5 +104,17 @@ class HolidayRequestListView(ListView):
     template_name = 'HolidayRequest/holiday_request_list.html'
     context_object_name = 'holiday_requests'
 
+class HolidayRequestUpdateView(UpdateView):
+    model = HolidayRequest
+    form_class = HolidayRequestForm
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('holiday_request_list')
+
+class HolidayRequestDeleteView(DeleteView):
+    model = HolidayRequest
+    form_class = HolidayRequestForm
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('holiday_request_list')
+
 
 

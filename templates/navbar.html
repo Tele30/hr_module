@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">HR Application</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home_page' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'create_employee' %}">Create Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'list_of_employee' %}">List of Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'create_contract' %}">Create Contract</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contract_list' %}">List of Contracts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'create_holiday_request' %}">Holiday Request</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'holiday_request_list' %}">Holiday Request List</a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -2,7 +2,7 @@ from django.urls import path
 
 from documents import views
 from documents.views import ContractCreateView, ContractListView, ContractUpdateView, HolidayRequestCreateView, \
-    HolidayListView
+    HolidayRequestListView
 
 urlpatterns = [
     path('', views.HomeTemplateView.as_view(), name='home_page'),
@@ -18,7 +18,9 @@ urlpatterns = [
     path('contract/update/<int:pk>/', ContractUpdateView.as_view(), name='update_contract'),
     path('delete_contract/<int:pk>/', views.ContractDeleteView.as_view(), name='delete_contract'),
 
-    path('holiday_requests/new/', HolidayRequestCreateView.as_view(), name='create_holiday_request'),
-    path('holiday_list/new/', HolidayListView.as_view(), name='holiday_request_list'),
+    path('holiday_requests/', HolidayRequestCreateView.as_view(), name='create_holiday_request'),
+    path('holiday_request_list/', HolidayRequestListView.as_view(), name='holiday_request_list'),
+    path('holiday_request_update/<int:pk>/', HolidayRequestListView.as_view(), name='holiday_request_update'),
+    path('holiday_request_delete/<int:pk>/', HolidayRequestListView.as_view(), name='holiday_request_delete'),
 
 ]
