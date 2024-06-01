@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Holiday Requests {% endblock %}
+{% block content %}
+<h1>Holiday Requests</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Status</th>
+            <th>Employee</th>
+            <th>Replacement</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for request in holiday_requests %}
+        <tr>
+            <td>{{ request.start_date }}</td>
+            <td>{{ request.end_date }}</td>
+            <td>{{ request.get_status_display }}</td>
+            <td>{{ request.employee }}</td>
+            <td>{{ request.replacement }}</td>
+            <td>
+                <a href="{% url 'holiday_request_update' request.id %}">Edit</a> |
+                <a href="{% url 'holiday_request_delete' request.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'holiday_request_create' %}" class="btn btn-primary">Add Holiday Request</a>
+{% endblock %}

@@ -15,6 +15,9 @@ Pagini :
 - 
 
 - linkuri pentru pagini in Nav bar - si butoane, chestii la studenti - sa mai fac CSS
-- introduc link in nav bar - lista agajati
-- in employee - sa facem update si detele 
-- 
+- introduc link in nav bar - lista agajati ///
+- in employee - sa facem update si detele  //
+
+Contracts
+
+

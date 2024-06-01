@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Add/Edit Contract {% endblock %}
+
+{% block content %}
+    <h2>{% if contract %}Edit{% else %}Add{% endif %} Contract</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+{% endblock %}

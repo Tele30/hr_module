@@ -1,9 +1,9 @@
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView, ListView, UpdateView, DeleteView, DetailView
 
-from documents.forms import EmployeeForm, EmployeeUpdateForm
-from documents.models import Employee
+from documents.forms import EmployeeForm, EmployeeUpdateForm, ContractForm, HolidayRequestForm
+from documents.models import Employee, Contract, HolidayRequest
 
 
 class HomeTemplateView(TemplateView):
@@ -43,3 +43,66 @@ class EmployeeDetailView(LoginRequiredMixin, DetailView):
     template_name = 'employee/details_employee.html'
     model = Employee
     permission_requierd = 'employee.view_employee'
+
+
+# Contract
+
+class ContractCreateView(CreateView):
+    model = Contract
+    form_class = ContractForm
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('home_page')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form_title'] = 'Create Contract'
+        context['form_button_text'] = 'Create'
+        return context
+
+
+class ContractListView(ListView):
+    model = Contract
+    template_name = 'contract/contract_list.html'
+    context_object_name = 'contracts'
+
+
+class ContractUpdateView(LoginRequiredMixin, UpdateView):
+    model = Contract
+    form_class = ContractForm
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('contract_list')
+    permission_requierd = 'contract.change_contract'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form_title'] = 'Update Contract'
+        context['form_button_text'] = 'Update'
+        return context
+
+
+class ContractDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = "contract/delete_contract.html"
+    model = Contract
+    success_url = reverse_lazy('contract_list')
+    permission_requierd = 'contract.delete_contract'
+
+
+class HolidayRequestCreateView(CreateView):
+    model = HolidayRequest
+    form_class = HolidayRequestForm
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('home_page')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form_title'] = 'HolidayRequest'
+        context['form_button_text'] = 'Holiday'
+        return context
+
+class HolidayRequestListView(ListView):
+    model = HolidayRequest
+    template_name = 'HolidayRequest/holiday_request_list.html'
+    context_object_name = 'holiday_requests'
+
+
+

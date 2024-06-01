@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Contracts {% endblock %}
+
+{% block content %}
+    <h2>Contracts</h2>
+    <a href="{% url 'create_contract' %}" class="btn btn-primary">Add Contract</a>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contract in contracts %}
+            <tr>
+                <td>{{ contract.employee }}</td>
+                <td>{{ contract.salary }}</td>
+                <td>{{ contract.start_date }}</td>
+                <td>{{ contract.end_date }}</td>
+                <td>
+                    <a href="{% url 'update_contract' contract.pk %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_contract' contract.pk %}" class="btn btn-outline-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
