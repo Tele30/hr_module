@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from documents.models import Employee, Contract, HolidayRequest
+from documents.models import Employee, Contract, HolidayRequest, CertificateEmployee
 
 
 class EmployeeForm(UserCreationForm):
@@ -87,3 +87,17 @@ class HolidayRequestForm(forms.ModelForm):
         self.fields['status'].widget.attrs.update({'class': 'form-control'})
         self.fields['employee'].widget.attrs.update({'class': 'form-control'})
         self.fields['replacement'].widget.attrs.update({'class': 'form-control'})
+
+
+
+class CertificateEmployeeForm(forms.ModelForm):
+    class Meta:
+        model = CertificateEmployee
+        fields = ['date', 'reason', 'employee']
+        widgets = {
+            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),}
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['reason'].widget.attrs.update({'class': 'form-control'})
+        self.fields['employee'].widget.attrs.update({'class': 'form-control'})

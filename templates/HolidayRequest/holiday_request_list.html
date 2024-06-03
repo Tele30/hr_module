@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block title %} Holiday Requests {% endblock %}
 {% block content %}
-    <h1>Holiday Requests</h1>
+    <h2>Holiday Requests</h2>
+    <a href="{% url 'create_holiday_request' %}" class="btn btn-primary">Add Holiday Request</a>
+
     <div class="col-md-10">
         <table class="table table-dark table-striped">
             <thead>
@@ -32,5 +34,4 @@
             </tbody>
         </table>
     </div>
-    <a href="{% url 'create_holiday_request' %}" class="btn btn-primary">Add Holiday Request</a>
 {% endblock %}

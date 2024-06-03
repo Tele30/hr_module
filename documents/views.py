@@ -2,8 +2,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, TemplateView, ListView, UpdateView, DeleteView, DetailView
 
-from documents.forms import EmployeeForm, EmployeeUpdateForm, ContractForm, HolidayRequestForm
-from documents.models import Employee, Contract, HolidayRequest
+from documents.forms import EmployeeForm, EmployeeUpdateForm, ContractForm, HolidayRequestForm, CertificateEmployeeForm
+from documents.models import Employee, Contract, HolidayRequest, CertificateEmployee
 
 
 class HomeTemplateView(TemplateView):
@@ -117,4 +117,35 @@ class HolidayRequestDeleteView(DeleteView):
     success_url = reverse_lazy('holiday_request_list')
 
 
+class CertificateEmployeeCreateView(CreateView):
+    model = CertificateEmployee
+    form_class = CertificateEmployee
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('home_page')
+    context_object_name = 'certificates'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form_title'] = 'CertificateEmployee'
+        context['form_button_text'] = 'Certificate'
+        return context
+
+
+class CertificateEmployeeListView(ListView):
+    model = CertificateEmployee
+    template_name = 'CertificateEmployee/certificates_employee_list.html'
+    context_object_name = 'holiday_requests'
+
+
+class CertificateEmployeeUpdateView(UpdateView):
+    model = CertificateEmployee
+    fields = ['date', 'reason', 'employee']
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('certificates_employee_list')
+
+
+class CertificateEmployeeDeleteView(DeleteView):
+    model = CertificateEmployee
+    form_class = CertificateEmployeeForm
+    template_name = 'any_form.html'
+    success_url = reverse_lazy('certificates_employee_list')
