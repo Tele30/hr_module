@@ -3,8 +3,8 @@
 {% block title %} Certificates Employee List {% endblock %}
 
 {% block content %}
-    <h2>Certificates List</h2>
-    <a href="{% url 'create_contract' %}" class="btn btn-primary">Create Certificate</a>
+    <h2 class="mb-3">Certificates List</h2>
+    <a href="{% url 'create_certificate' %}" class="btn btn-primary mb-3">Create Certificate</a>
     <table class="table table-dark table-striped">
         <thead>
         <tr>
@@ -21,8 +21,8 @@
                 <td>{{ certificate.reason }}</td>
                 <td>{{ certificate.employee }}</td>
                 <td>
-                    <a href="{% url 'update_certificate' contract.pk %}" class="btn btn-warning">Edit</a>
-                    <a href="{% url 'delete_certificate' contract.pk %}"
+                    <a href="{% url 'update_certificate' certificate.pk %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_certificate' certificate.pk %}"
                        class="btn btn-outline-danger btn-sm">Delete</a>
                 </td>
             </tr>

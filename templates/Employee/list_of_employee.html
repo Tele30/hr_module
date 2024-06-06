@@ -43,7 +43,7 @@
                             <td>{{ employee.last_name }}</td>
                             <td>{{ employee.email }}</td>
                             <td>{{ employee.phone }}</td>
-                            <td>{{ employee.position }}</td>
+                            <td>{{ employee.get_position_display}}</td>
                             <td>
                                 <a href="{% url 'update_employee' employee.pk %}" class="btn btn-outline-warning btn-sm">Update</a>
                                 <a href="{% url 'delete_employee' employee.pk %}" class="btn btn-outline-danger btn-sm">Delete</a>

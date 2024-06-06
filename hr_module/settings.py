@@ -130,7 +130,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "documents.Employee"
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "home_page"
 LOGOUT_REDIRECT_URL = reverse_lazy("login")
 
 

@@ -1,16 +1,14 @@
+from django.contrib.auth import views as auth_views
 from django.urls import path
 
 from documents import views
-from documents.views import ContractCreateView, ContractListView, ContractUpdateView, HolidayRequestCreateView, \
-    HolidayRequestListView, CertificateEmployeeCreateView
-
-
-class CertificateEmployeeListView:
-    pass
-
+from documents.views import *
 
 urlpatterns = [
     path('', views.HomeTemplateView.as_view(), name='home_page'),
+
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    # path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),
 
     path('create-employee/', views.EmployeeCreateView.as_view(), name='create_employee'),
     path('list_of_employee/', views.EmployeeListView.as_view(), name='list_of_employee'),
@@ -25,12 +23,18 @@ urlpatterns = [
 
     path('holiday_requests/', HolidayRequestCreateView.as_view(), name='create_holiday_request'),
     path('holiday_request_list/', HolidayRequestListView.as_view(), name='holiday_request_list'),
-    path('holiday_request_update/<int:pk>/', HolidayRequestListView.as_view(), name='holiday_request_update'),
-    path('holiday_request_delete/<int:pk>/', HolidayRequestListView.as_view(), name='holiday_request_delete'),
+    path('holiday_request_update/<int:pk>/', HolidayRequestUpdateView.as_view(), name='holiday_request_update'),
+    path('holiday_request_delete/<int:pk>/', HolidayRequestDeleteView.as_view(), name='holiday_request_delete'),
 
     path('certificates', CertificateEmployeeCreateView.as_view(), name='create_certificate'),
-    path('certificates_employee_list/', CertificateEmployeeListView.as_view(), name='certificate_employee_list'),
+    path('certificates_employee_list/', CertificateEmployeeListView.as_view(), name='certificates_employee_list'),
     path('update_certificate/<int:pk>/', views.CertificateEmployeeUpdateView.as_view(), name='update_certificate'),
     path('delete_certificate/<int:pk>/', views.CertificateEmployeeDeleteView.as_view(), name='delete_certificate'),
+
+    path('password_change/', auth_views.PasswordChangeView.as_view(template_name='registration/password_change.html'),
+         name='password_change'),
+    path('password_change/done/',
+         auth_views.PasswordChangeDoneView.as_view(template_name='registration/password_change_done.html'),
+         name='password_change_done'),
 
 ]

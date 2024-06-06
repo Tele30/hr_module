@@ -3,8 +3,14 @@ from django.db import models
 
 
 class Employee(AbstractUser):
+    POSITION = (
+        ("employee", "Employee"),
+        ("hr", "Human Resource"),
+        ("manager", "Manager"),
+    )
     phone = models.CharField(max_length=20)
-    position = models.CharField(max_length=50)
+    position = models.CharField(max_length=50, choices=POSITION)
+
 
 
 class Contract(models.Model):
