@@ -1,0 +1,202 @@
+/*Homepage Styling*/
+
+.homepage_header_container {
+    box-shadow: 5px 2px 25px -4px rgba(192, 184, 243, 0.95),
+       inset 15px 2px 25px 20px rgba(12, 12, 21, 0.37);
+  background-color: rgba(62, 142, 203, 0.9);
+    font-weight: bolder;
+    text-align: center;
+    color: black;
+    padding: 1%;
+    margin: 1% auto;
+
+}
+
+.homepage_header_text {
+    margin: 10px auto;
+    line-height: 5;
+    font: 20px Arial, sans-serif;
+}
+
+.homepage_header_text h1 {
+    font-size: 58px;
+}
+
+
+/*NavBar Styling*/
+
+
+.login-container {
+    display: flex;
+    padding-left: 50px;
+
+}
+
+.navbar-brand {
+    margin-right: 0;
+
+}
+
+.navbar-nav {
+    margin: 0 0 0 5%;
+}
+
+
+.nav-item {
+
+}
+
+
+.logo-image {
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+
+}
+
+#navbar_style {
+
+box-shadow: 0 0 5px rgba(121, 119, 119, 0.5),
+inset 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+/*Background image settings */
+
+#background_image {
+    background-image: url("/static/images/HRoffice2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+
+
+#navbar_nav ul li a {
+    transition: transform 0.2s ease-in-out;
+}
+
+#navbar_nav ul li a:hover,
+#navbar_nav ul li button:hover {
+    /*color: rgb(143, 201, 235);*/
+    font-size: 16px;
+    transform: scale(1.2);
+    box-shadow: 7px -5px 25px rgba(214, 234, 231, 0.9),
+            inset 0 2px 8px 4px rgba(62, 142, 203, 0.3);
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2%;
+    /*text-transform: uppercase;*/
+    /*text-decoration: underline;*/
+}
+
+/* Stilizare Tabel*/
+
+.create_employee_container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 1500px;
+    height: auto;
+    /*margin: 100px auto;*/
+    gap: 100px;
+
+}
+
+.create_employees_table {
+    /*border: 10px solid black;*/
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    width: 40%;
+    /*max-width: 800px;*/
+    margin: 20px 0 0 -50%;
+    padding: 20px;
+    border-radius: 10px;
+    color: rgb(59, 54, 54);
+}
+
+.create_employees_table button {
+    margin-top: 2%;
+}
+
+
+.table_container_contract
+{
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    width: 40%;
+    /*max-width: 800px;*/
+    margin: 20px 0 0 -20%;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    color: rgb(59, 54, 54);
+
+
+}
+
+.image_container_creat {
+    display: flex;
+    margin: 4% -10% 0 0;
+}
+
+
+.image_container_creat img {
+    width: 300px;
+    height: 150px;
+
+}
+
+/*Tables style*/
+
+
+
+.list_empoloyees_container,
+.holiday_request_container,
+.certificates_employee_table,
+.contract_list_table {
+    box-shadow: 0 0 5px rgba(255, 251, 251, 0.5),
+               0 0 5px rgba(255, 251, 251, 0.9) ;
+ width: 100%;
+ margin: 3% auto;
+ font-family: Arial, sans-serif;
+ font-size: 14px;
+ color: #333;
+
+
+}
+
+
+
+.title_container,
+.contract_list_title,
+.certificates_employee_title{
+    color: #eaf5f5;
+    box-shadow: 0 0 20px rgba(128, 109, 48, 1),
+            inset 208px 69px 150px -25px rgba(12, 12, 21, 0.9),
+                inset 208px 69px 150px 128px rgba(221, 231, 252, 0.6);
+
+      background-color: rgba(145, 193, 239, 0.3);
+    max-width: 35rem;
+    padding: 1%;
+    align-items: center;
+    text-align: start;
+    border-radius: 5px;
+    margin-top: 1%;
+}
+
+.login_container
+{
+        box-shadow: 2px 20px 20px rgba(133, 130, 130, 0.9),
+            inset 48px 69px 150px -25px rgba(12, 12, 21, 0.8),
+                inset 208px 69px 150px 1000px rgba(169, 182, 206, 0.6);
+    align-items: center;
+    text-align: center;
+
+}
+
+.login_elements {
+    margin: 20px auto;
+
+}
+

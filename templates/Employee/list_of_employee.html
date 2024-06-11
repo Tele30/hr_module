@@ -4,25 +4,25 @@
 {% block title %} List of Employee {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Filters</h3>
-                    </div>
-                    <form method="get">
-                        <div class="card-body">
-                            {{ filter_form }}
-                        </div>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-outline-success">Search</button>
-                            <a href="{% url 'list_of_employee' %}" class="btn btn-outline-secondary">Cancel</a>
-                        </div>
-                    </form>
-                </div>
+    <div >
+        <div class="">
+            <div class="">
+{#                <div class="card">#}
+{#                    <div class="card-header">#}
+{#                        <h3 class="text-center">Filters</h3>#}
+{#                    </div>#}
+{#                    <form method="get">#}
+{#                        <div class="card-body">#}
+{#                            {{ filter_form }}#}
+{#                        </div>#}
+{#                        <div class="card-footer text-center">#}
+{#                            <button type="submit" class="btn btn-outline-success">Search</button>#}
+{#                            <a href="{% url 'list_of_employee' %}" class="btn btn-outline-secondary">Cancel</a>#}
+{#                        </div>#}
+{#                    </form>#}
+{#                </div>#}
             </div>
-            <div class="col-md-10">
+            <div class="list_empoloyees_container">
                 <table class="table table-dark table-striped">
                     <thead>
                     <tr>

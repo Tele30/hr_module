@@ -1,23 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'static/css/my_style.css' %}">
 {% block title %} Login {% endblock %}
 
 {% block content %}
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3 gy-5">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center">Login</h3>
+                <div class="card login_container">
+                    <div class="LoginTitleContainer">
+                        <h3 class="text-center login_elements">Login</h3>
                     </div>
-                    <form method="post">
+                    <form method="post" class="login_elements">
                         {% csrf_token %}
-                        <div class="card-body">
+                        <div class="card-body login_elements">
                             {{ form.as_p }}
                         </div>
-                        <div class="card-footer text-center">
+                        <div class="login_elements">
                             <button type="submit" class="btn btn-outline-success">Login</button>
-                            <a href="#" class="btn btn-outline-danger">Forgot your password?</a>
+                            <a href="{% url 'password_reset' %}" class="btn btn-outline-danger">Forgot your password?</a>
                         </div>
                     </form>
                 </div>

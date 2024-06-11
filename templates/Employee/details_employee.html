@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static 'static/css/my_style.css' %}">
 {% block title %} Details - {{ employee }} {% endblock %}
 
 {% block content %}

@@ -1,23 +1,24 @@
 {% extends 'base.html' %}
+
 {% load static %}
+
+ <link rel="stylesheet" type="text/css" href="{% static 'static/css/my_style.css' %}">
 
 {% block title %} Home {% endblock %}
 
 {% block content %}
-<div class="container-fluid bg-info text-dark p-3 mb-2">
-    <div class="row">
-        <div class="col-12 text-center">
-            <h1 class="display-4">Welcome to HR Application</h1>
-            <p class="lead">Manage your employees efficiently and effectively.</p>
+    
+    
+<div class=" homepage_header_container">
+    <div class="">
+        <div class="homepage_header_text">
+            <h1 class="">Welcome to HR Application</h1>
+            <h3 class="">Manage your employees efficiently and effectively.</h3>
         </div>
     </div>
 </div>
+    
 
-<div class="container mt-6">
-    <div class="row">
-        <div class="col-12 text-center">
-            <img src="{% static 'images/HR.app.jpg' %}" class="img-fluid" alt="HR Banner">
-        </div>
-    </div>
-</div>
 {% endblock %}
+
+

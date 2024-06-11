@@ -84,12 +84,9 @@ class ContractListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         # Angajații din HR sau superuserii pot vedea toate c
         if self.request.user.position == 'hr' or self.request.user.is_superuser:
-            return CertificateEmployee.objects.all()
+            return Contract.objects.all()
         # Angajații obișnuiți pot vedea doar propriile certificate
-        return CertificateEmployee.objects.filter(employee=self.request.user)
-
-
-
+        return Contract.objects.filter(employee=self.request.user)
 
 
 

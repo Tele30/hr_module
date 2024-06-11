@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'static/css/my_style.css' %}">
+
 {% block title %} Contracts {% endblock %}
 
 {% block content %}
+    <div class="contract_list_title">
     <h2 class="mb-3">Contracts</h2>
     <a href="{% url 'create_contract' %}" class="btn btn-primary mb-3">Add Contract</a>
-    <table class="table table-dark table-striped">
+    </div>
+    
+    <table class="table table-dark table-striped contract_list_table">
         <thead>
             <tr>
                 <th>Employee</th>

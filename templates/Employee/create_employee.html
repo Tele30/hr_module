@@ -1,14 +1,34 @@
 {% extends 'home/../base.html' %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'static/css/my_style.css' %}">
 {% block title %} Create new Employee {% endblock %}
 {% block content %}
-    <div class="container-fluid">
-        <div class="row">
+    <div class="create_employee_container">
+
+    <div class="create_employees_table"> {# Stilizare Tabel #}
+        <div class="">
             <form method="POST">
                 {% csrf_token %}
                 {{ form }}
-                <button type="submit">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
 
             </form>
         </div>
     </div>
+
+
+    <div class="image_container_creat">
+    <img src="{% static 'static/images/HRhome.jpg' %}" alt="HRcreate HR" class="image_container_creat">
+    </div>
+
+    </div>
+
 {% endblock %}
+
+{##}
+{#{% block content2 %}#}
+{#    <div class="ImageContainerCreat"> {# For list of Employee #}
+{#    <img src="{% static 'static/images/HRhome.jpg' %}" alt="Logo HR" class="logo-image">#}
+{#    </div>#}
+{#{% endblock %}#}
